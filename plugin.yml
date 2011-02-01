@@ -1,0 +1,3 @@
+name: SignTrader
+main: com.bukkit.darknesschaos.SignTrader.SignTrader
+version: 0.01
