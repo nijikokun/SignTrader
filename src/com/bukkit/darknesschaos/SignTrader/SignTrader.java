@@ -28,7 +28,7 @@ public class SignTrader extends JavaPlugin {
 	private final SignTraderPlayerListener playerListener = new SignTraderPlayerListener(this);
     private final HashMap<Player, Boolean> debugees = new HashMap<Player, Boolean>();
     private ArrayList<String> gameOps;
-    ArrayList<int[]> SignLocs;
+    public static ArrayList<int[]> SignLocs;
 
     public SignTrader(PluginLoader pluginLoader, Server instance,
             PluginDescriptionFile desc, File folder, File plugin,
@@ -103,8 +103,15 @@ public class SignTrader extends JavaPlugin {
               System.err.println("Error: " + e.getMessage());
               }
     }
-    
-    public void addSigns()
+    public void addSign(int x, int y, int z)
+    {
+    	int[] loc = new int[3];
+    	loc[0] = x;
+		loc[1] = y;
+		loc[2] = z;
+		SignLocs.add(loc);
+    }
+    public void loadSigns()
     {
     	try
         {
